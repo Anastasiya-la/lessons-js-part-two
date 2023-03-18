@@ -76,8 +76,12 @@ export function getSquarePositiveIntegers(array: Array<number>): Array<number> {
 
 export function sumFirstNumbers(N: number): number {
     //...здесь пишем код.
+    let sum = 0;
+    for (let i = 0; i <= N; i++) {
+        sum = i + sum;
+    }
+    return sum;
     // В return стоит "заглушка", чтоб typescript не ругался
-    return 0
 }
 
 // ...и "лапку" вверх!!!!
