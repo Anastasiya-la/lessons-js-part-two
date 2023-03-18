@@ -40,9 +40,23 @@ export function getSum(number: number): number {
 // В противном случае - false.
 
 export const isEvenIndexSumGreater = (arr: Array<number>): boolean => {
+    const sumNumEven = arr.reduce((prValue, curValue, index) => {
+        if (index % 2 === 0) {
+            prValue += curValue
+        }
+        return prValue
+    }, 0)
+
+    const sumNumOdd = arr.reduce((prValue, curValue, index) => {
+        if (index % 2 !== 0) {
+            prValue += curValue
+        }
+        return prValue
+    }, 0)
+
     //...здесь пишем код.
     // В return стоит "заглушка", чтоб typescript не ругался
-    return true
+    return sumNumEven > sumNumOdd
 }
 
 // 5. Функция getSquarePositiveIntegers принимает параметром массив чисел и возвращает новый массив. 
