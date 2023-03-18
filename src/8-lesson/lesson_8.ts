@@ -2,10 +2,9 @@
 // числа (неопределённое кол-во) и возвращает их сумму (rest).
 
 export function sum(...nums: Array<number>): number {
-    // console.log(nums)
-    //...здесь пишем код.
+
     // В return стоит "заглушка", чтоб typescript не ругался
-    return 123
+    return nums.reduce((previousValue, currentValue) => previousValue + currentValue, 0)
 }
 
 
@@ -17,20 +16,21 @@ export function sum(...nums: Array<number>): number {
 //  - "11", если треугольник обычный,
 //  - "00", если такого треугольника не существует.
 
-export function getTriangleType(a: number,b: number,c: number): string {
+export function getTriangleType(a: number, b: number, c: number): string {
     //...здесь пишем код.
+    return a === b && b === c ? '10' : a + b > c && c + b > a && a + c > b ? a === b || b === c || c === a ? '01' : '11' : '00'
     // В return стоит "заглушка", чтоб typescript не ругался
-    return ""
 }
 
 
 // 3. Функция getSum принимает параметром целое число и возвращает
 // сумму цифр этого числа
 
-export function getSum(number: number): number{
+export function getSum(number: number): number {
     //...здесь пишем код.
+    const result = String(number).split('').map(s => Number(s)).reduce((previousValue, currentValue) => previousValue + currentValue, 0)
     // В return стоит "заглушка", чтоб typescript не ругался
-    return 123
+    return result
 }
 
 
